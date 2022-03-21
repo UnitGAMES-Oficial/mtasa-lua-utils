@@ -77,9 +77,13 @@ export function isLocalImport(
     context: TransformationContext,
 ): boolean {
     const rootPath = path.resolve(context.options.rootDir ?? '.');
-    const modulePath = path.resolve(
-        getImportNodeModuleFile(importNode, context).fileName,
-    );
+
+    const fileName = getImportNodeModuleFile(importNode, context)?.fileName;
+    if (!fileName) {
+        return false;
+    }
+
+    const modulePath = path.resolve(fileName);
 
     return modulePath.startsWith(rootPath);
 }
