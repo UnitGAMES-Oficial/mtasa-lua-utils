@@ -229,7 +229,10 @@ export function compileResourceBundledScripts(
             .map(script => ({
                 in: normalizeSlashes(path.join(data.rootDir, script.src)),
                 out: normalizeSlashes(
-                    path.join(data.outDir, script.src.replace(/\.ts$/, '.lua')),
+                    path.join(
+                        data.outDir,
+                        script.src.replace(/\.(ts|tsx)$/, '.lua'),
+                    ),
                 ),
             }));
 
