@@ -20,7 +20,6 @@
     },
     "type": "commonjs",
     "scripts": {
-        "prepare": "tsc",
         "prebuild": "npm run convert-schema",
         "build": "tsc --build",
         "watch": "tsc --build --watch",
@@ -29,7 +28,8 @@
         "eslint": "eslint --max-warnings=0 .",
         "test": "jest .",
         "test-create": "node utils/create-test.js",
-        "convert-schema": "node utils/convert-schema.js && prettier --write src/compiler/meta/types.ts"
+        "convert-schema": "node utils/convert-schema.js && prettier --write src/compiler/meta/types.ts",
+        "postinstall": "npm run tsc --build"
     },
     "bin": {
         "mtasa-lua-utils": "./dist/cli.js"
