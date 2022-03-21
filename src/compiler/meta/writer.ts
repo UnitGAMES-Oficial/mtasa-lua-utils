@@ -43,7 +43,7 @@ function genScriptTag(
 ): Element {
     const processedScript: Script = {
         ...script,
-        src: script.src.replace(/\.ts$/, '.lua'),
+        src: script.src.replace(/\.(ts|tsx)$/, '.lua'),
     };
     if (hideAdditionalProps) {
         delete processedScript.bundled;
