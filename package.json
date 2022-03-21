@@ -29,7 +29,7 @@
         "test": "jest .",
         "test-create": "node utils/create-test.js",
         "convert-schema": "node utils/convert-schema.js && prettier --write src/compiler/meta/types.ts",
-        "postinstall": "yarn && yarn run build"
+        "postinstall": "yarn run build"
     },
     "bin": {
         "mtasa-lua-utils": "./dist/cli.js"
