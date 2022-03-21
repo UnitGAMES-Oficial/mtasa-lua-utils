@@ -28,8 +28,7 @@
         "eslint": "eslint --max-warnings=0 .",
         "test": "jest .",
         "test-create": "node utils/create-test.js",
-        "convert-schema": "node utils/convert-schema.js && prettier --write src/compiler/meta/types.ts",
-        "install": "yarn && yarn build"
+        "convert-schema": "node utils/convert-schema.js && prettier --write src/compiler/meta/types.ts"
     },
     "bin": {
         "mtasa-lua-utils": "./dist/cli.js"
